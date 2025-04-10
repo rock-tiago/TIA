@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.tiaapp"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.tiaapp"
@@ -42,6 +42,8 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation("com.google.ar:core:1.37.0")
+    implementation(project(":opencv"))
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -54,6 +56,11 @@ dependencies {
     implementation(libs.androidx.foundation)
     implementation("com.google.accompanist:accompanist-permissions:0.34.0")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+    //cameraX - better for OpenCv and ARCore
+    implementation("androidx.camera:camera-core:1.3.1")
+    implementation("androidx.camera:camera-camera2:1.3.1")
+    implementation("androidx.camera:camera-lifecycle:1.3.1")
+    implementation("androidx.camera:camera-view:1.3.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

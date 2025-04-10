@@ -1,6 +1,8 @@
 package com.example.tiaapp.screens
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
@@ -14,6 +16,7 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import java.util.*
 
 @Composable
@@ -72,4 +75,8 @@ fun MainScreen() {
             }
         }
     }
+}
+
+private fun checkCameraPermission(context: Context): Boolean {
+    return ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
 }
